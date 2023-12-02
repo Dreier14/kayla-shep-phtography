@@ -1,7 +1,7 @@
 import express, { Express } from "express";
 import cors from "cors";
 
-import * as resumeController from "./controllers/resumeInfoController/resumeInfoController";
+import * as photosController from "./controllers/photosController/photosController";
 import * as nodeMailerController from "./controllers/nodeMailerController/nodeMailerController";
 
 const PORT: number = 3500;
@@ -9,14 +9,13 @@ const app: Express = express();
 
 app.use(
     cors({
-        origin: "https://adamdreier.vercel.app",
+        origin: "*",
     }),
     express.json()
 );
 
 // Get Methods
-app.get("/api/getTechnicalSkills", resumeController.getAllTechnicalSkills);
-app.get("/api/getProjects", resumeController.getAllProjects);
+app.get("/api/getAllPhotos", photosController.getAllPhotos);
 
 app.post("/api/sendMail", nodeMailerController.sendMail);
 

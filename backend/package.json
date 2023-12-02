@@ -1,7 +1,7 @@
 {
-    "name": "adam-resume-backend",
+    "name": "kayla-lynn-shepston-photography-backend",
     "version": "1.0.0",
-    "description": "Backend for Adams Resume Portfolio",
+    "description": "Backend for Kayla's Photography",
     "main": "server/index.ts",
     "scripts": {
         "start": "ts-node server/index.ts",

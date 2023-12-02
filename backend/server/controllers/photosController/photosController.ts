@@ -1,16 +1,16 @@
 import { Request, Response, NextFunction } from "express";
-import { technicalSkills } from "../../serverData/technologies/technicalSkills";
+import { photos } from "../../serverData/photos/photos";
 import { projects } from "../../serverData/projects/projects";
 
-export const getAllTechnicalSkills = async (
+export const getAllPhotos = async (
     req: Request,
     res: Response,
     next: NextFunction
 ): Promise<void> => {
     try {
-        res.status(200).json({ technicalSkills });
+        res.status(200).json({ photos });
     } catch (error: unknown) {
-        console.error(error, "Unable to get Technical Skills Data");
+        console.error(error, "Unable to get all photos");
         res.status(500);
     }
 };
