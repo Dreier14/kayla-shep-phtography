@@ -3,7 +3,6 @@ import React from 'react';
 import { TopLevelInfo } from '../TopLevelInfo/TopLevelInfo';
 import { observer } from 'mobx-react-lite';
 import { Photos } from '../Photos/Photos';
-import { Projects } from '../Projects/Projects';
 import { IDataStoreInfo } from '../../Interfaces';
 
 // The Home component will serve as the base entry point for our application as we add more components.
@@ -13,7 +12,6 @@ export const Home: React.FC<IDataStoreInfo> = observer(({ store }): JSX.Element 
             <TopLevelInfo />
             <br />
             <Photos store={store} />
-            {/* <Projects store={store} /> */}
         </>
     );
 });

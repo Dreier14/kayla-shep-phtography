@@ -1,4 +1,4 @@
-import { Container, Image, Col, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import ModalImage from "react-modal-image";
 
 import { IPhotosDictionary } from "../../Interfaces";
