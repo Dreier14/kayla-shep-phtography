@@ -1,6 +1,6 @@
 import { Container, Row } from 'react-bootstrap';
 
-import { renderTopLevelInfo } from './TopLevellInfoUtils';
+import { renderTopLevelInfo } from './TopLevelInfoUtils';
 
 import './TopLevelInfo.scss';
 

@@ -1,7 +1,7 @@
-export interface ITechnicalSkills {
-    data: { technicalSkills: ITechnicalSkillsDictionary };
+export interface IPhotos {
+    data: { photos: IPhotosDictionary };
 }
 
-export interface ITechnicalSkillsDictionary {
+export interface IPhotosDictionary {
     [key: string]: Array<string>;
 }

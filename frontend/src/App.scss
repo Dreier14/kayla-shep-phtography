@@ -1,6 +1,5 @@
 .app-body {
     min-height: 85vh;
-    color: azure;
 }
 
 .list-item-config {
@@ -8,10 +7,6 @@
     color: azure !important;
 }
 
-.base-text-color {
-    color: azure !important;
-}
-
-.custom-color-config {
-    background: linear-gradient(to right, #434343 0%, black 100%);
+.custom-font {
+    font-family: cursive;
 }

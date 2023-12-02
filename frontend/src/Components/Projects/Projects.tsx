@@ -10,12 +10,12 @@ export const Projects: React.FC<IDataStoreInfo> = observer(({ store }): JSX.Elem
     const compInfoString = 'Project Info';
     // We want to cache this because the props dont change as it is static, this will help load performance.
     useMemo(() => {
-        store.getAllProjects();
+
     }, []);
 
     return (
         <>
-            {renderComponentStates(store.isLoading, store.hasError, <ProjectCards {...store.projects} />, compInfoString)}
+            {renderComponentStates(store.isLoading, store.hasError, <ProjectCards />, compInfoString)}
         </>
     );
 });

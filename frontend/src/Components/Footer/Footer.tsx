@@ -6,7 +6,7 @@ import "../../App.scss";
 
 export const Footer = () => {
     return (
-        <Navbar className="justify-content-center custom-color-config">
+        <Navbar className="justify-content-center custom-font">
             {getNavLinks()}
         </Navbar>
     );

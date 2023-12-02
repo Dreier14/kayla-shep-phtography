@@ -1,10 +1,10 @@
 import axios from "axios";
 import { action, makeObservable, observable } from "mobx";
 import {
-    ITechnicalSkills,
-    ITechnicalSkillsDictionary,
-    IProjects,
-    IProjectsDictionary,
+    IPhotos,
+    IPhotosDictionary,
+    // IProjects,
+    // IProjectsDictionary,
 } from "../Interfaces/index";
 
 export const BASE_URL = {
@@ -14,9 +14,8 @@ export const BASE_URL = {
 export class DataStore {
     @observable isLoading: boolean = true;
     @observable hasError: boolean = false;
-    @observable technicalSkills: ITechnicalSkillsDictionary | undefined =
-        undefined;
-    @observable projects: IProjectsDictionary | undefined = undefined;
+    @observable photos: IPhotosDictionary | undefined = undefined;
+    // @observable projects: IProjectsDictionary | undefined = undefined;
 
     constructor() {
         makeObservable(this);
@@ -33,28 +32,28 @@ export class DataStore {
     }
 
     @action
-    setTechnicalSkills(
-        technicalSkills: ITechnicalSkillsDictionary | undefined
-    ): void {
-        this.technicalSkills = technicalSkills;
+    setPhotos(photos: IPhotosDictionary | undefined): void {
+        this.photos = photos;
     }
 
-    @action
-    setProjects(projects: IProjectsDictionary | undefined): void {
-        this.projects = projects;
-    }
+    // @action
+    // setProjects(projects: IProjectsDictionary | undefined): void {
+    //     this.projects = projects;
+    // }
 
     @action
-    async getAllTechnicalSkills(): Promise<void> {
+    async getAllPhotos(): Promise<void> {
         try {
             this.setIsLoading(true);
             // We could create a helper function to also get the endpoint and configure it depending on the environment.
-            const response: ITechnicalSkills = await axios.get(
-                `${BASE_URL.apiPath}/api/getTechnicalSkills`
+            const response: IPhotos = await axios.get(
+                `${BASE_URL.apiPath}/api/getAllPhotos`
             );
 
-            this.setTechnicalSkills(response.data.technicalSkills);
-        } catch (e: any) {
+            console.log(response);
+
+            this.setPhotos(response.data.photos);
+        } catch (e: unknown) {
             // We want to have an error to the console for the developers if the API has an issue.
             console.error(e);
             this.setError(true);
@@ -63,21 +62,19 @@ export class DataStore {
         }
     }
 
-    @action
-    async getAllProjects(): Promise<void> {
-        try {
-            this.setIsLoading(true);
-            // We could create a helper function to also get the endpoint and configure it depending on the environment.
-            const response: IProjects = await axios.get(
-                `${BASE_URL.apiPath}/api/getProjects`
-            );
-            this.setProjects(response.data.projects);
-        } catch (e: any) {
-            // We want to have an error to the console for the developers if the API has an issue.
-            console.error(e);
-            this.setError(true);
-        } finally {
-            this.setIsLoading(false);
-        }
-    }
+    // @action
+    // async getAllProjects(): Promise<void> {
+    //     try {
+    //         this.setIsLoading(true);
+    //         // We could create a helper function to also get the endpoint and configure it depending on the environment.
+    //         const response: IProjects = await axios.get(`/api/getProjects`);
+    //         this.setProjects(response.data.projects);
+    //     } catch (e: any) {
+    //         // We want to have an error to the console for the developers if the API has an issue.
+    //         console.error(e);
+    //         this.setError(true);
+    //     } finally {
+    //         this.setIsLoading(false);
+    //     }
+    // }
 }

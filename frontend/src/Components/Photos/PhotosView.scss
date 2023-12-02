@@ -1,0 +1,20 @@
+.centered-content {
+    text-align: center;
+
+    &.photo-flex {
+        display: flex;
+        flex-flow: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.portrait-photos {
+    margin: 10px;
+    width: 300px;
+}
+
+.landscape-photos {
+    margin: 10px;
+    width: 500px;
+}
