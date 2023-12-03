@@ -1,8 +1,7 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { observer } from 'mobx-react-lite';
 // File pattern will be to separate internal components from package imports.
 import { IDataStoreInfo } from '../../Interfaces';
-import { renderComponentStates } from '../../RenderComponentStates/RenderComponentStates';
 import { PhotosView } from './PhotosView';
 import Sammie from '../../Portraits/Sammie.jpg';
 import Photo1 from '../../Portraits/Photo1.jpg';
@@ -21,12 +20,11 @@ const PhotosObj = {
     Landscapes: [Photo1L]
 }
 
-export const Photos: React.FC<IDataStoreInfo> = observer(({ store }): JSX.Element => {
-    const compInfoString = 'Photos';
+export const Photos: React.FC<IDataStoreInfo> = (): JSX.Element => {
     // We want to cache this because the props dont change as it is static, this will help load performance.
     return (
         <>
             <PhotosView  {...PhotosObj} />
         </>
     );
-});
+};
