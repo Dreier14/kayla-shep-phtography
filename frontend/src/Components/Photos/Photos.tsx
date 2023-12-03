@@ -1,5 +1,4 @@
 import React from 'react';
-import { observer } from 'mobx-react-lite';
 // File pattern will be to separate internal components from package imports.
 import { IDataStoreInfo } from '../../Interfaces';
 import { PhotosView } from './PhotosView';
