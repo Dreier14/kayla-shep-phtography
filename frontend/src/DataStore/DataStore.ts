@@ -50,8 +50,6 @@ export class DataStore {
                 `${BASE_URL.apiPath}/api/getAllPhotos`
             );
 
-            console.log(response);
-
             this.setPhotos(response.data.photos);
         } catch (e: unknown) {
             // We want to have an error to the console for the developers if the API has an issue.
